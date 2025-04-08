@@ -68,7 +68,7 @@ document
   .addEventListener("submit", function (e) {
     e.preventDefault();
 
-    emailjs.sendForm("service_pwuox2l", "template_aiall2y", this).then(
+    emailjs.sendForm("service_pwuox2l", "template_y2t9obt", this).then(
       function () {
         document.getElementById("status-message").innerText =
           "Message sent successfully!";
