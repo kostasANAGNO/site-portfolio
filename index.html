@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Innovative and interactive portfolio by Konstantinos anagnostou, featuring full-stack web development projects."
+    />
+    <title>Konstantinos - Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <!-- Particles container -->
+
+    <!-- Navbar -->
+    <nav>
+      <!-- comment <div class="logo">kostas.anagnostou</div> -->
+      <a
+        href="https://github.com/kostasANAGNO/kostasANAGNO"
+        class="logo"
+        target="_blank"
+        >kostas.anagnostou</a
+      >
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Hello I'm <span class="glow">Konstantinos</span></h1>
+          <p>
+            I'm a passionate developer with a sharp interest in web development,
+            data analysis, and automation. I love exploring new technologies and
+            building solutions that solve real-world problems.
+          </p>
+          <a href="#contact" class="cta-btn">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>ABOUT ME</h2>
+      <p>
+        I'm Konstantinos , an undergraduate student at Computer Science and
+        Biomedical Informatics in university of Thessaly
+      </p>
+    </section>
+
+    <section id="skillset" class="skillset">
+      <h3>What I Know</h3>
+      <ul class="skills-list">
+        <li><i class="fa-solid fa-code"></i> C</li>
+        <li><i class="fa-brands fa-python"></i> Python</li>
+        <li><i class="fa-solid fa-database"></i> MySQL/MongoDB</li>
+        <li><i class="fa-brands fa-java"></i> Java</li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <h2>MY PROJECTS</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>XkeywordScraper</h3>
+          <p>
+            A X scraper for keyword data extraction utilizing selenium library
+            (python)
+          </p>
+          <a
+            href="https://github.com/kostasANAGNO/XkeywordScraper"
+            class="cta-btn"
+            target="_blank"
+            >View Project</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>Reddit-Data-Extractor</h3>
+          <p>
+            A Reddit scraper that collects posts and comments from specified
+            subreddits, filters by category and time, and stores the data in CSV
+            files while avoiding duplicates
+          </p>
+          <a
+            href="https://github.com/kostasANAGNO/Reddit-Data-Extractor"
+            class="cta-btn"
+            target="_blank"
+            >View Project</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>DataMiningProject</h3>
+          <p>
+            This is my personal project in data mining based on machine learning
+            in kaggles Patients_data.xlsx dataset with accuracy 93%-95%
+          </p>
+          <a
+            href="https://github.com/kostasANAGNO/DataMiningProject"
+            class="cta-btn"
+            target="_blank"
+            >View Project</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-form" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <form class="contact-form">
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <p id="status-message"></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Konstantinos Anagnostou. All Rights Reserved.</p>
+        <div class="social-icons">
+          <a
+            href="https://github.com/kostasANAGNO"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/konstantinos-anagnostou-634b51306/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("qUx4oUUWjWarCiMHP"); // Αντικατάστησέ το με το δικό σου Public Key
+      })();
+    </script>
+  </body>
+</html>
