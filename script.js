@@ -3,10 +3,23 @@ function toggleMenu() {
   navbar.classList.toggle("open");
 }
 
+document.querySelector(".hamburger").addEventListener("keydown", function (e) {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    toggleMenu();
+  }
+});
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    document.querySelector("nav").classList.remove("open");
+  });
+});
+
 particlesJS("particles-js", {
   particles: {
     number: {
-      value: 100, // Number of particles
+      value: window.innerWidth < 768 ? 40 : 100, // Fewer particles on small screens
       density: {
         enable: true,
         value_area: 800,

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Innovative and interactive portfolio by Konstantinos anagnostou, featuring full-stack web development projects."
+      content="Portfolio of Konstantinos Anagnostou, Computer Science &amp; Biomedical Informatics student: web scraping, data mining and machine learning projects in Python."
     />
-    <title>Konstantinos - Portfolio</title>
+    <title>Konstantinos Anagnostou - Portfolio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -25,11 +25,11 @@
 
     <!-- Navbar -->
     <nav>
-      <!-- comment <div class="logo">kostas.anagnostou</div> -->
       <a
         href="https://github.com/kostasANAGNO/kostasANAGNO"
         class="logo"
         target="_blank"
+        rel="noopener"
         >kostas.anagnostou</a
       >
       <ul class="nav-links">
@@ -38,7 +38,13 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="hamburger" onclick="toggleMenu()">
+      <div
+        class="hamburger"
+        onclick="toggleMenu()"
+        role="button"
+        tabindex="0"
+        aria-label="Toggle menu"
+      >
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -63,8 +69,14 @@
     <section id="about" class="about">
       <h2>ABOUT ME</h2>
       <p>
-        I'm Konstantinos , an undergraduate student at Computer Science and
-        Biomedical Informatics in university of Thessaly
+        I'm Konstantinos, an undergraduate student in Computer Science and
+        Biomedical Informatics at the University of Thessaly.
+      </p>
+      <p>
+        My work sits where software meets data: I build tools that collect
+        data from the web, clean and analyse it, and apply machine learning to
+        extract insight. My projects so far cover browser automation, API-based
+        data collection and predictive modelling on real health data.
       </p>
     </section>
 
@@ -75,6 +87,8 @@
         <li><i class="fa-brands fa-python"></i> Python</li>
         <li><i class="fa-solid fa-database"></i> MySQL/MongoDB</li>
         <li><i class="fa-brands fa-java"></i> Java</li>
+        <li><i class="fa-solid fa-spider"></i> Web Scraping</li>
+        <li><i class="fa-solid fa-chart-line"></i> Data Analysis &amp; ML</li>
       </ul>
     </section>
 
@@ -82,46 +96,90 @@
     <section id="projects" class="projects">
       <h2>MY PROJECTS</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <article class="project-card">
           <h3>XkeywordScraper</h3>
-          <p>
-            A X scraper for keyword data extraction utilizing selenium library
-            (python)
+          <p class="project-summary">
+            A keyword-based scraper for X (Twitter) built with Python and
+            Selenium. It collects tweets for a list of keywords within a given
+            date range.
           </p>
+          <ul class="project-features">
+            <li>Splits the date range into 30-minute windows to collect more tweets per search</li>
+            <li>Authenticates with a session token and can run headless</li>
+            <li>Saves results to JSON named after the keyword and timestamp</li>
+            <li>Optional MySQL storage (V2) and language detection with langdetect</li>
+            <li>Built-in delays and retries to respect rate limits</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li>
+            <li>Selenium</li>
+            <li>MySQL</li>
+            <li>JSON</li>
+          </ul>
           <a
             href="https://github.com/kostasANAGNO/XkeywordScraper"
             class="cta-btn"
             target="_blank"
+            rel="noopener"
             >View Project</a
           >
-        </div>
-        <div class="project-card">
+        </article>
+        <article class="project-card">
           <h3>Reddit-Data-Extractor</h3>
-          <p>
-            A Reddit scraper that collects posts and comments from specified
-            subreddits, filters by category and time, and stores the data in CSV
-            files while avoiding duplicates
+          <p class="project-summary">
+            A Reddit scraper built on the PRAW API wrapper that collects posts
+            and comments from chosen subreddits and stores them as CSV files
+            ready for analysis.
           </p>
+          <ul class="project-features">
+            <li>Covers the top, controversial, new, hot and rising categories with time filters</li>
+            <li>Fetches up to 2000 posts per category in batches</li>
+            <li>Stores post metadata (title, author, score, upvote ratio, comment count) and full comment trees</li>
+            <li>Skips already saved post IDs to avoid duplicates between runs</li>
+            <li>Waits between requests to stay within API rate limits</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li>
+            <li>PRAW</li>
+            <li>Reddit API</li>
+            <li>CSV</li>
+          </ul>
           <a
             href="https://github.com/kostasANAGNO/Reddit-Data-Extractor"
             class="cta-btn"
             target="_blank"
+            rel="noopener"
             >View Project</a
           >
-        </div>
-        <div class="project-card">
+        </article>
+        <article class="project-card">
           <h3>DataMiningProject</h3>
-          <p>
-            This is my personal project in data mining based on machine learning
-            in kaggles Patients_data.xlsx dataset with accuracy 93%-95%
+          <p class="project-summary">
+            A machine learning project that predicts whether a patient has had
+            a heart attack, using a health survey dataset of patient records.
           </p>
+          <ul class="project-features">
+            <li>Exploratory analysis, including a US state heatmap of heart attack cases</li>
+            <li>Feature engineering: binary, ordinal and one-hot encoding, and state-to-region mapping</li>
+            <li>PCA dimensionality reduction (3D visualisation, 20 components for modelling)</li>
+            <li>KNN classifier: 93.3% accuracy</li>
+            <li>Logistic Regression: 94.6% accuracy, ROC AUC 0.88; strongest predictors are angina, age and stroke history</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li>
+            <li>pandas</li>
+            <li>scikit-learn</li>
+            <li>seaborn</li>
+            <li>PCA</li>
+          </ul>
           <a
             href="https://github.com/kostasANAGNO/DataMiningProject"
             class="cta-btn"
             target="_blank"
+            rel="noopener"
             >View Project</a
           >
-        </div>
+        </article>
       </div>
     </section>
 
@@ -147,7 +205,7 @@
             placeholder="Your Message"
             required
           ></textarea>
-          <button type="submit" class=""cta-btn">Send</button>
+          <button type="submit" class="cta-btn">Send</button>
         </form>
         <p id="status-message"></p>
       </div>
@@ -161,6 +219,7 @@
           <a
             href="https://github.com/kostasANAGNO"
             target="_blank"
+            rel="noopener"
             aria-label="GitHub"
           >
             <i class="fab fa-github"></i>
@@ -168,6 +227,7 @@
           <a
             href="https://www.linkedin.com/in/konstantinos-anagnostou-634b51306/"
             target="_blank"
+            rel="noopener"
             aria-label="LinkedIn"
           >
             <i class="fab fa-linkedin"></i>
@@ -176,15 +236,12 @@
       </div>
     </footer>
 
-     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-     <script src="script.js"></script>
-     <script>
-       (function () {
-        emailjs.init("qUx4oUUWjWarCiMHP"); // Αντικατάστησέ το με το δικό σου Public Key
-         })();
-     </script>
-</body>
-</html>
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      (function () {
+        emailjs.init("qUx4oUUWjWarCiMHP");
+      })();
+    </script>
   </body>
 </html>
